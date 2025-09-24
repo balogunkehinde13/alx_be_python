@@ -14,12 +14,12 @@ def convert_to_fahrenheit(celsius: float) -> float:
 # 🖥️ User Interaction
 def main():
     try:
-        temp_input = input("Enter temperature value: ").strip()
+        temp_input = input("Enter the temperature to convert: ").strip()
         if not temp_input.replace(".", "", 1).isdigit() and not (temp_input.startswith('-') and temp_input[1:].replace(".", "", 1).isdigit()):
             raise ValueError("Invalid temperature. Please enter a numeric value.")
         
         temperature = float(temp_input)
-        scale = input("Is this in Celsius (C) or Fahrenheit (F)? ").strip().upper()
+        scale = input("Is this temperature in Celsius or Fahrenheit? (C/F):").strip().upper()
 
         if scale == "C":
             converted = convert_to_fahrenheit(temperature)
